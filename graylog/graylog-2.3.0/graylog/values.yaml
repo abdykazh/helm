@@ -276,7 +276,7 @@ graylog:
   ingress:
     ## If true, Graylog server Ingress will be created
     ##
-    enabled: false
+    enabled: true
     ## Graylog server Ingress annotations
     ##
     annotations: {}
@@ -287,14 +287,14 @@ graylog:
     #  traffic-type: public
 
     ## Specify the Ingress class name
-    ingressClassName: ""
+    ingressClassName: "nginx"
 
     ## Graylog server Ingress hostnames with optional path
     ## Must be provided if Ingress is enabled
     ## Note: Graylog does not support two URL. You can specify only single URL
     ##
-    hosts: []
-    #  - graylog.yourdomain.com
+    hosts:
+      - graylog.local.127.0.0.1.sslip.io
 
     ## Extra paths to prepend to every host configuration. This is useful when working with annotation based services.
     extraPaths: []
